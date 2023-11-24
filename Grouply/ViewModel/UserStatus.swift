@@ -5,7 +5,15 @@
 //  Created by Bruke Wondessen on 11/20/23.
 //
 
-import Foundation
+import SwiftUI
+
+class StatusViewModel: ObservableObject {
+    @Published var status: UserStatus = .nonConfigured
+    
+    func updateStatus(_ status: UserStatus) {
+        self.status = status
+    }
+}
 
 enum UserStatus: Int, CaseIterable {
     case nonConfigured

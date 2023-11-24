@@ -12,7 +12,7 @@ struct LoginView: View {
     @State private var password = ""
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 VStack(alignment: .leading, spacing: 12) {
                     HStack { Spacer() }
