@@ -5,4 +5,10 @@
 //  Created by Bruke Wondessen on 11/24/23.
 //
 
-import Foundation
+import UIKit
+
+extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}

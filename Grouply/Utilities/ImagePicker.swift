@@ -40,7 +40,6 @@ struct ImagePicker: UIViewControllerRepresentable {
             }
             
             self.parent.image = image
-            
             self.parent.dismiss()
         }
     }
