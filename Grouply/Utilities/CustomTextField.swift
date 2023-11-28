@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustonTextField: View {
+struct CustomTextField: View {
     let imageName: String
     let placeHolderText: String
     let isSecureField: Bool

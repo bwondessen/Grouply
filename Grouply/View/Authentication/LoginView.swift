@@ -27,9 +27,9 @@ struct LoginView: View {
                         .foregroundStyle(.blue)
                     
                     VStack(spacing: 40) {
-                        CustonTextField(imageName: "envelope", placeHolderText: "Email", isSecureField: false, text: $email)
+                        CustomTextField(imageName: "envelope", placeHolderText: "Email", isSecureField: false, text: $email)
                         
-                        CustonTextField(imageName: "lock", placeHolderText: "Password", isSecureField: true, text: $password)
+                        CustomTextField(imageName: "lock", placeHolderText: "Password", isSecureField: true, text: $password)
                     }
                     .padding([.top, .horizontal], 32)
 
