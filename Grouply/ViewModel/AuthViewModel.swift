@@ -14,13 +14,19 @@ class AuthViewModel: NSObject, ObservableObject {
     }
     
     func register(withEmail email: String, password: String, fullName: String, username: String) {
-        Auth.auth().createUser(withEmail: email, password: password) { Result, error in
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if let error = error {
                 print("DEBUG: Failed to register with error \(error.localizedDescription)")
                 return
             }
             
-            print("DEBUG: Successfully registered user with Firebase!")
+            guard let user = result?.user else { return }
+            
+            let data: [String: Any] = ["email": email, "username": username, "fullName": fullName]
+            
+            Firestore.firestore().collection("users").document(user.uid).setData(data) { _ in
+                print("DEBUG: Succesfully updated user info in Firestore...")
+            }
         }
     }
     

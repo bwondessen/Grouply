@@ -95,9 +95,7 @@ struct EditProfileView: View {
     }
     
     func loadImage() {
-        guard let selectedImage = selectedImage else {
-            return
-        }
+        guard let selectedImage = selectedImage else { return }
         
         profileImage = Image(uiImage: selectedImage)
     }
