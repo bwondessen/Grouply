@@ -8,6 +8,7 @@
 import Firebase
 
 class AuthViewModel: NSObject, ObservableObject {
+    @Published var didAuthenticateUser: Bool = false
     
     func login() {
         
@@ -21,17 +22,17 @@ class AuthViewModel: NSObject, ObservableObject {
             }
             
             guard let user = result?.user else { return }
-            
+
             let data: [String: Any] = ["email": email, "username": username, "fullName": fullName]
             
             Firestore.firestore().collection("users").document(user.uid).setData(data) { _ in
-                print("DEBUG: Succesfully updated user info in Firestore...")
+                self.didAuthenticateUser = true
             }
         }
     }
     
     func uploadProfileImage() {
-        
+        print("DEBUG: Upload profile image from view model...")
     }
     
     func signOut() {
