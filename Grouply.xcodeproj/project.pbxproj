@@ -42,6 +42,7 @@
 		690DDE082B0C4D840016076F /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690DDE072B0C4D840016076F /* UserStatus.swift */; };
 		69187D792B1311D2006BB483 /* ChatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69187D782B1311D2006BB483 /* ChatBubbleView.swift */; };
 		69187D7D2B1325B9006BB483 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69187D7C2B1325B9006BB483 /* MessageView.swift */; };
+		69394C412B182EF1009A187A /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69394C402B182EF1009A187A /* ImageUploader.swift */; };
 		6948D9B32B02F15300AB76F2 /* GrouplyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948D9B22B02F15300AB76F2 /* GrouplyApp.swift */; };
 		6948D9B52B02F15300AB76F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948D9B42B02F15300AB76F2 /* ContentView.swift */; };
 		6948D9B72B02F15400AB76F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6948D9B62B02F15400AB76F2 /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		690DDE072B0C4D840016076F /* UserStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatus.swift; sourceTree = "<group>"; };
 		69187D782B1311D2006BB483 /* ChatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleView.swift; sourceTree = "<group>"; };
 		69187D7C2B1325B9006BB483 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		69394C402B182EF1009A187A /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		6948D9AF2B02F15300AB76F2 /* Grouply.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grouply.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6948D9B22B02F15300AB76F2 /* GrouplyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrouplyApp.swift; sourceTree = "<group>"; };
 		6948D9B42B02F15300AB76F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		6948D9C12B02F25D00AB76F2 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				69394C402B182EF1009A187A /* ImageUploader.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				69187D7D2B1325B9006BB483 /* MessageView.swift in Sources */,
 				69783D692B109AB300244D79 /* SearchBarView.swift in Sources */,
 				69D052882B0466ED0071BD8B /* ChannelsView.swift in Sources */,
+				69394C412B182EF1009A187A /* ImageUploader.swift in Sources */,
 				69C0A6262B05B82800EA60E6 /* SettingsHeaderView.swift in Sources */,
 				69D0528F2B0467DA0071BD8B /* ConversationsView.swift in Sources */,
 				69C0A6282B05B95500EA60E6 /* SettingsCellView.swift in Sources */,

@@ -6,9 +6,17 @@
 //
 
 import Firebase
+import UIKit
 
 class AuthViewModel: NSObject, ObservableObject {
     @Published var didAuthenticateUser: Bool = false
+    @Published var userSession: FirebaseAuth.User?
+    
+    private var tempCurrentUser: FirebaseAuth.User?
+    
+    override init() {
+        userSession = Auth.auth().currentUser
+    }
     
     func login() {
         
@@ -22,6 +30,7 @@ class AuthViewModel: NSObject, ObservableObject {
             }
             
             guard let user = result?.user else { return }
+            self.tempCurrentUser = user
 
             let data: [String: Any] = ["email": email, "username": username, "fullName": fullName]
             
@@ -31,8 +40,17 @@ class AuthViewModel: NSObject, ObservableObject {
         }
     }
     
-    func uploadProfileImage() {
-        print("DEBUG: Upload profile image from view model...")
+    func uploadProfileImage(_ image: UIImage) {
+        guard let uid = tempCurrentUser?.uid else {
+            print("DEBUG: Failed to set temp current user...")
+            return
+        }
+        
+        ImageUploader.uploadImage(image: image) { imageUrl in
+            Firestore.firestore().collection("users").document(uid).updateData(["profileImageUrl": imageUrl]) { _ in
+                print("DEBUG: Successfully updated user data...")
+            }
+        }
     }
     
     func signOut() {

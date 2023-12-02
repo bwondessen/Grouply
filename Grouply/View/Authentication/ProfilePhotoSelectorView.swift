@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct ProfilePhotoSelectorView: View {
-//    @EnvironmentObject var viewModel: AuthViewModel
-    
-    @ObservedObject var viewModel: AuthViewModel = AuthViewModel()
-    
+    @EnvironmentObject var viewModel: AuthViewModel
+        
     @State private var imagePickerPresented: Bool = false
     @State private var selectedImage: UIImage?
     @State private var profileImage: Image?
@@ -47,7 +45,7 @@ struct ProfilePhotoSelectorView: View {
             
             if let image = selectedImage {
                 Button {
-                    viewModel.uploadProfileImage()
+                    viewModel.uploadProfileImage(image)
                 } label: {
                     Text("Continue")
                         .font(.headline)
