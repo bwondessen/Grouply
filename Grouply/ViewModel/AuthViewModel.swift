@@ -14,6 +14,8 @@ class AuthViewModel: NSObject, ObservableObject {
     
     private var tempCurrentUser: FirebaseAuth.User?
     
+    static let shared: AuthViewModel = AuthViewModel()
+    
     override init() {
         userSession = Auth.auth().currentUser
     }
@@ -41,19 +43,16 @@ class AuthViewModel: NSObject, ObservableObject {
     }
     
     func uploadProfileImage(_ image: UIImage) {
-        guard let uid = tempCurrentUser?.uid else {
-            print("DEBUG: Failed to set temp current user...")
-            return
-        }
+        guard let uid = tempCurrentUser?.uid else { return }
         
         ImageUploader.uploadImage(image: image) { imageUrl in
             Firestore.firestore().collection("users").document(uid).updateData(["profileImageUrl": imageUrl]) { _ in
-                print("DEBUG: Successfully updated user data...")
             }
         }
     }
     
     func signOut() {
-        
+        self.userSession = nil
+        try? Auth.auth().signOut()
     }
 }
