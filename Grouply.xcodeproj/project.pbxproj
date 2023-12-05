@@ -67,6 +67,7 @@
 		69D0528A2B0467340071BD8B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D052892B0467340071BD8B /* SettingsView.swift */; };
 		69D0528C2B0467810071BD8B /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D0528B2B0467810071BD8B /* ChatView.swift */; };
 		69D0528F2B0467DA0071BD8B /* ConversationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D0528E2B0467DA0071BD8B /* ConversationsView.swift */; };
+		69FE9B2D2B1EA32700D2A45F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FE9B2C2B1EA32700D2A45F /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		69D052892B0467340071BD8B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		69D0528B2B0467810071BD8B /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		69D0528E2B0467DA0071BD8B /* ConversationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsView.swift; sourceTree = "<group>"; };
+		69FE9B2C2B1EA32700D2A45F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				6909F4812B15631500CDCA62 /* Message.swift */,
+				69FE9B2C2B1EA32700D2A45F /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				69C0A62E2B07082200EA60E6 /* EditProfileView.swift in Sources */,
 				69783D652B108D1400244D79 /* NewMessageView.swift in Sources */,
 				69783D672B108D2B00244D79 /* UserCellView.swift in Sources */,
+				69FE9B2D2B1EA32700D2A45F /* User.swift in Sources */,
 				69C0A6302B09DE7700EA60E6 /* StatusSelectorView.swift in Sources */,
 				69A0A2752B0F200F0093D9ED /* ImagePicker.swift in Sources */,
 				6976F8622B02FC4000D072A6 /* LoginView.swift in Sources */,

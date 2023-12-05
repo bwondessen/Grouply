@@ -11,6 +11,7 @@ import UIKit
 class AuthViewModel: NSObject, ObservableObject {
     @Published var didAuthenticateUser: Bool = false
     @Published var userSession: FirebaseAuth.User?
+    @Published var currentUser: User?
     
     private var tempCurrentUser: FirebaseAuth.User?
     
@@ -74,9 +75,11 @@ class AuthViewModel: NSObject, ObservableObject {
         guard let uid = userSession?.uid else { return }
         
         Firestore.firestore().collection("users").document(uid).getDocument { snapshot, _ in
-            guard let data = snapshot?.data() else { return }
+//            guard let data = snapshot?.data() else { return }
             
-            print(data)
+            guard let user = try? snapshot?.data(as: User.self) else { return }
+            
+            self.currentUser = user
         }
     }
 }
