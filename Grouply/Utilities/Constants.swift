@@ -5,4 +5,6 @@
 //  Created by Bruke Wondessen on 12/5/23.
 //
 
-import Foundation
+import Firebase
+
+let COLLECTION_USERS = Firestore.firestore().collection("users")

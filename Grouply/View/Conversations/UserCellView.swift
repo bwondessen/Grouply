@@ -6,22 +6,25 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct UserCellView: View {
+    let user: User
+    
     var body: some View {
         VStack {
             HStack {
-                Image("user0")
+                KFImage(URL(string: user.profileImageUrl))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 48, height: 48)
                     .clipShape(Circle())
                 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("bwondessen")
+                    Text(user.username)
                         .font(.system(size: 14, weight: .semibold))
                     
-                    Text("Bruke Wondessen")
+                    Text(user.fullName)
                         .font(.system(size: 15))
                 }
                 .foregroundStyle(.black)
@@ -34,6 +37,6 @@ struct UserCellView: View {
     }
 }
 
-#Preview {
-    UserCellView()
-}
+//#Preview {
+//    UserCellView()
+//}
