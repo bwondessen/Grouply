@@ -10,6 +10,7 @@ import SwiftUI
 struct ConversationsView: View {
     @State private var showNewMessageView: Bool = false
     @State private var showChatView: Bool = false
+    @State var selectedUser: User?
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -17,7 +18,7 @@ struct ConversationsView: View {
             ScrollView {
                 VStack(alignment: .leading) {
                     ForEach(0...10, id: \.self) { _ in
-                        NavigationLink(destination: ChatView()) {
+                        NavigationLink(destination: ChatView(user: MOCK_USER)) {
                             ConversationCellView()
                         }
                     }
@@ -39,11 +40,13 @@ struct ConversationsView: View {
             .clipShape(Circle())
             .padding()
             .sheet(isPresented: $showNewMessageView) {
-                NewMessageView(showChatView: $showChatView)
+                NewMessageView(showChatView: $showChatView, user: $selectedUser)
             }
         }
         .navigationDestination(isPresented: $showChatView) {
-            ChatView()
+            if let user = selectedUser {
+                ChatView(user: user)
+            }
         }
     }
 }
