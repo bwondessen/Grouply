@@ -21,6 +21,7 @@ class NewMessageViewModel: ObservableObject {
             
             // Alternative to commented out code below
             self.users = documents.compactMap { try? $0.data(as: User.self) }
+                .filter({ $0.id != AuthViewModel.shared.userSession?.uid })
             
 //            documents.forEach { document in
 //                guard let user = try? document.data(as: User.self) else { return }

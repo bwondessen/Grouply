@@ -21,7 +21,7 @@ class ChatViewModel: ObservableObject {
             .init(isFromCurrentUser: false, messageText: "What's the plan?"),
             .init(isFromCurrentUser: true, messageText: "You tryna go to the park and play soccer with us?"),
             .init(isFromCurrentUser: false, messageText: "Yeah, I'm down"),
-            .init(isFromCurrentUser: false, messageText: "What time ya'll meeting up"),
+            .init(isFromCurrentUser: false, messageText: "What time ya'll meeting up?"),
             .init(isFromCurrentUser: true, messageText: "At like 6 PM"),
             .init(isFromCurrentUser: true, messageText: "Hopefully everyone is on time today 😂"),
             .init(isFromCurrentUser: false, messageText: "💀💀😂"),
